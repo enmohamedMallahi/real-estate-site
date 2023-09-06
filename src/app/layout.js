@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
 
 
         <div class="relative bg-black px-4 py-3 sm:pr-8 md:px-8">
-          <p class="text-center text-white ">This is a section of some simple </p>
+          <p class="text-center text-sm text-white ">This is a section of some simple </p>
         </div>
 
         <Navbar />
