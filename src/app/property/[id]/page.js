@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic'
 
 const PropertyDetailPage = async ({ params }) => {
   try {
-    const res = await fetch('https://realestates.vercel.app/api/properties/' + params.id)
+    const res = await fetch('https://alpha-estate.vercel.app/api/properties/' + params.id)
     const property = await res.json()
     console.log(property)
   } catch (err) {

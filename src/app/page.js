@@ -7,7 +7,7 @@ import OurClients from '@/components/OurClients'
 
 export default async function Home() {
   try {
-    const res = await fetch('https://realestates.vercel.app/api/properties')
+    const res = await fetch('https://alpha-estate.vercel.app/api/properties')
     const properties = await res.json()
 
   } catch (err) {
