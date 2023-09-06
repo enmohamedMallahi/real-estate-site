@@ -7,9 +7,10 @@ export const revalidate = 0 // seconds
 export const dynamic = 'force-dynamic'
 
 const PropertyDetailPage = async ({ params }) => {
+  let property = {};
   try {
     const res = await fetch('https://alpha-estate.vercel.app/api/properties/' + params.id)
-    const property = await res.json()
+    property = await res.json()
     console.log(property)
   } catch (err) {
     console.error(err);
