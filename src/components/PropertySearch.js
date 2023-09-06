@@ -37,20 +37,21 @@ const PropertySearch = ({ properties }) => {
       <section className="bg-gradient-to-r from-indigo-900 via-purple-700 to-blue-900 text-white relative py-12 px-4">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto relative text-white z-10">
-          <h2 className="text-3xl font-semibold text-center mb-6">Property Search</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <h2 className="text-3xl font-semibold text-center mb-6">Trouver Votre Nouvelle Proprièté</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
             <div className="mb-4">
-              <label className="block text-gray-200 font-semibold mb-2">Reference:</label>
+              <label className="block text-gray-200 font-semibold mb-2">Réference:</label>
               <input
                 type="text"
                 name="reference"
+                placeholder="REF-xxxx"
                 value={filters.reference}
                 onChange={handleFilterChange}
                 className="w-full px-4 py-2 border border-gray-700 text-slate-700 rounded-lg focus:outline-none focus:border-blue-500"
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-200 font-semibold mb-2">Buy/Rental:</label>
+              <label className="block text-gray-200 font-semibold mb-2">Acheter/Louer:</label>
               <select
                 name="buyOrRent"
                 value={filters.buyOrRent}
@@ -63,22 +64,22 @@ const PropertySearch = ({ properties }) => {
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-gray-200 font-semibold mb-2">Type of Property:</label>
+              <label className="block text-gray-200 font-semibold mb-2">Type de Proprièté:</label>
               <select
                 name="propertyType"
                 value={filters.propertyType}
                 onChange={handleFilterChange}
                 className="w-full px-4 py-2 border border-gray-700 text-slate-700 rounded-lg focus:outline-none focus:border-blue-500"
               >
-                <option value="all">All</option>
-                <option value="apartment">Apartment</option>
-                <option value="office_apartment">Office Apartment</option>
-                <option value="furnished_apartment">Furnished Apartment</option>
+                <option value="all">Tous</option>
+                <option value="apartment">Apartement</option>
+                <option value="office_apartment">Appartement burreau</option>
+                <option value="furnished_apartment">Appartement complèt</option>
                 {/* Add more property types */}
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-gray-200 font-semibold mb-2">Neighborhood:</label>
+              <label className="block text-gray-200 font-semibold mb-2">Zone:</label>
               <select
                 name="neighborhood"
                 value={filters.neighborhood}
@@ -87,15 +88,15 @@ const PropertySearch = ({ properties }) => {
               >
                 <option value="all">All</option>
                 <option value="Agdal">Agdal</option>
-                <option value="neighborhood2">Neighborhood 2</option>
-                <option value="neighborhood3">Neighborhood 3</option>
+                <option value="neighborhood2">Zone 1</option>
+                <option value="neighborhood3">Zone 2</option>
                 {/* Add more neighborhoods */}
               </select>
             </div>
             <div className="md:col-span-4">
               <button
                 onClick={handleSearchClick}
-                className="mx-auto block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-100  w-full"
+                className="mx-auto block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md transition duration-100  w-full"
               >
                 Search
               </button>
