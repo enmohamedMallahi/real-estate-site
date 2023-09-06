@@ -32,7 +32,7 @@ const PropertyDetailPage = async ({ params }) => {
           <ImageSlider images={property?.images} />
 
           {/* Property Info */}
-          <div className="md:py-8">
+          <div className="">
             {/* Property Name */}
             <div className="mb-2 md:mb-3">
               <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">{property?.title}</h2>
