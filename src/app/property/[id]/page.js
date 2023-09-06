@@ -1,6 +1,10 @@
 // pages/property/[id].js
+import ImageSlider from "@/components/ImageSlider";
 
-import React from 'react';
+
+export const fetchCache = 'force-no-store'
+export const revalidate = 0 // seconds
+export const dynamic = 'force-dynamic'
 
 const PropertyDetailPage = async ({ params }) => {
   const res = await fetch('http://localhost:3000/api/properties/' + params.id)
@@ -12,13 +16,14 @@ const PropertyDetailPage = async ({ params }) => {
       <div className="mx-auto max-w-screen-lg px-4 md:px-8">
         <div className="grid gap-8 md:grid-cols-2">
           {/* Images */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             {property?.images?.map((image, index) => (
               <div key={index} className="relative overflow-hidden rounded-lg bg-gray-100">
                 <img src={image} loading="lazy" alt={`Image ${ index + 1 }`} className="h-full w-full object-cover object-center" />
               </div>
             ))}
-          </div>
+          </div> */}
+          <ImageSlider images={property.images} />
 
           {/* Property Info */}
           <div className="md:py-8">

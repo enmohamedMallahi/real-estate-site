@@ -15,7 +15,7 @@ const Footer = () => {
             </div>
 
 
-            <p className="mb-6 text-gray-500 sm:pr-8">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p className="mb-6 text-gray-500 sm:pr-8">Notre Agence Immo Monte-Carlo vous accompagne dans tous vos projets immobiliers . Nous sommes spécialisés dans la vente, l’achat et la location de tous type de biens (appartements, maisons, villas, garages, terrains, bureaux et locaux commerciaux…) sur rabat et régions.</p>
 
 
             <div className="flex justify-center gap-4">
@@ -143,7 +143,7 @@ const Footer = () => {
 
         </div>
 
-        <div className="border-t py-8 text-center text-sm text-gray-400">© 2021 - Present Flowrift. All rights reserved.</div>
+        <div className="border-t py-8 text-center text-sm text-gray-400">Copyright © 2010 - 2023. Immo Monte-Carlo Tous droits réservés.</div>
       </footer>
     </div>
   )

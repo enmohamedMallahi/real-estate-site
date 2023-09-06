@@ -2,11 +2,12 @@
 import Link from 'next/link';
 import React from 'react';
 
+
 const Properties = ({ properties }) => {
 
   return (
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 px-4 md:px-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-8 px-4 md:px-8 py-8">
       {properties.map((property) => (
         <div key={property.id}  >
           <div className="bg-white flex flex-col shadow-lg rounded-lg overflow-hidden">
@@ -19,13 +20,16 @@ const Properties = ({ properties }) => {
               </Link>
               <p className="text-gray-600 mb-2">{property.location}</p>
               <div className="flex justify-between text-gray-800">
-                <div>
-                  <p>{property.bedrooms} Bedrooms</p>
-                  <p>{property.bathrooms} Bathrooms</p>
-                </div>
+
+                <p>{property.bedrooms} Bedrooms</p>
+                <p>{property.bathrooms} Bathrooms</p>
                 <p>{property.area}</p>
+
               </div>
-              <div className="mt-4">
+              <div className="mt-2">
+                <p className="text-red-500 font-bold">{property.price} DHs</p>
+              </div>
+              <div className="mt-2">
                 <Link
                   href={`/property/${ property.id }`}
                   className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full inline-block transition duration-300"
