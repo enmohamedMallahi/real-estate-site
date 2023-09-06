@@ -7,13 +7,13 @@ export const revalidate = 0 // seconds
 export const dynamic = 'force-dynamic'
 
 const PropertyDetailPage = async ({ params }) => {
-  // try {
-  //   const res = await fetch('https://realestates.vercel.app/api/properties/' + params.id)
-  //   const property = await res.json()
-  //   console.log(property)
-  // } catch (err) {
-  //   console.error(err);
-  // }
+  try {
+    const res = await fetch('https://realestates.vercel.app/api/properties/' + params.id)
+    const property = await res.json()
+    console.log(property)
+  } catch (err) {
+    console.error(err);
+  }
 
 
   return (
