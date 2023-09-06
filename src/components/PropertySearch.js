@@ -93,7 +93,7 @@ const PropertySearch = ({ properties }) => {
                 {/* Add more neighborhoods */}
               </select>
             </div>
-            <div className="md:col-span-4">
+            <div className="col-span-2 md:col-span-4">
               <button
                 onClick={handleSearchClick}
                 className="mx-auto block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md transition duration-100  w-full"
