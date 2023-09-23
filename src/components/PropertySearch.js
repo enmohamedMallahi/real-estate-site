@@ -58,13 +58,13 @@ const PropertySearch = ({ properties }) => {
                 onChange={handleFilterChange}
                 className="w-full px-4 py-2 border border-gray-700 text-slate-700 rounded-lg focus:outline-none focus:border-blue-500"
               >
-                <option value="all">All</option>
-                <option value="buy">Buy</option>
-                <option value="rental">Rental</option>
+                <option value="all">Tous</option>
+                <option value="buy">Acheter</option>
+                <option value="rental">Louer</option>
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-gray-200 font-semibold mb-2">Type de Proprièté:</label>
+              <label className="block text-gray-200 font-semibold mb-2">Type:</label>
               <select
                 name="propertyType"
                 value={filters.propertyType}
@@ -98,7 +98,7 @@ const PropertySearch = ({ properties }) => {
                 onClick={handleSearchClick}
                 className="mx-auto block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-md transition duration-100  w-full"
               >
-                Search
+                Rechercher
               </button>
             </div>
           </div>

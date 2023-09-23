@@ -7,7 +7,7 @@ const CTA = () => {
       <div className="text-white text-center z-10 px-8 md:px-8 py-24">
 
         <h2 className="text-2xl font-bold  mb-4">Louer, acheter ou vendre</h2>
-        <p className="mb-4">Vous cherchez à louer ou à acheter une nouvelle propriété ou à vendre une existante?<br /> L'agence Immo Monte-Carlo fournit une solution facile!</p>
+        <p className="mb-4 text-sm">Vous cherchez à louer ou à acheter une nouvelle propriété ou à vendre une existante?<br /> L'agence Immo Monte-Carlo fournit une solution facile!</p>
         <div className="grid place-content-center">
 
           <Link

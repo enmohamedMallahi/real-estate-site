@@ -5,6 +5,9 @@ import PropertySearch from '@/components/PropertySearch'
 import OurClients from '@/components/OurClients'
 import properties from '@/data/properties'
 
+export const fetchCache = 'force-no-store'
+export const revalidate = 60 * 60 // seconds
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   try {

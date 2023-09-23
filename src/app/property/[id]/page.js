@@ -11,7 +11,7 @@ const PropertyDetailPage = async ({ params }) => {
   try {
     const res = await fetch('https://alpha-estate.vercel.app/api/properties/' + params.id)
     property = await res.json()
-    console.log(property)
+    // console.log(property)
   } catch (err) {
     console.error(err);
   }
@@ -40,17 +40,17 @@ const PropertyDetailPage = async ({ params }) => {
 
             {/* Price */}
             <div className="mb-4">
-              <span className="text-xl font-bold text-gray-800 md:text-2xl">{property?.price}</span>
+              <span className="text-lg italic font-bold text-blue-500 md:text-2xl">{property?.price} DHs</span>
             </div>
 
             {/* Description */}
-            <div className="mt-10 md:mt-16 lg:mt-20">
+            <div className="mb-4">
               <div className="mb-3 text-lg font-semibold text-gray-800">Description</div>
               <p className="text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, veniam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, aliquid.</p>
             </div>
 
             {/* More Property Info */}
-            <div className="mt-6">
+            <div className="mb-4">
               <div className="mb-2 text-lg font-semibold text-gray-800">Property Details</div>
               <ul className="text-gray-500">
                 <li>Location: {property?.location}</li>
@@ -59,6 +59,14 @@ const PropertyDetailPage = async ({ params }) => {
                 <li>Area: {property?.area}</li>
               </ul>
             </div>
+
+            {/*C CTA Button */}
+            <a
+              className="w-full inline-block rounded-lg bg-green-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-green-300 transition duration-100 hover:bg-green-600 focus-visible:ring active:bg-green-700 md:text-base"
+              href="#"
+            >
+              Contactez-nous
+            </a>
           </div>
         </div>
       </div>
