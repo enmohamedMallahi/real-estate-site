@@ -1,17 +1,17 @@
 "use client"
 
 import React, { useState } from 'react';
-import Properties from '@/components/Properties'
+import { useRouter } from 'next/navigation'
 
 
-const PropertySearch = ({ properties }) => {
+const PropertySearch = () => {
   const [filters, setFilters] = useState({
     reference: '',
     buyOrRent: 'all',
-    propertyType: 'all',
-    neighborhood: 'all',
+    type: 'all',
+    location: 'all',
   });
-  const [filteredProperties, setFilteredProperties] = useState([]);
+  const router = useRouter()
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -19,16 +19,15 @@ const PropertySearch = ({ properties }) => {
   };
 
   const handleSearchClick = () => {
-    const filteredProperties = properties.filter((property) => {
-      return (
-        (filters.reference === '' || property.reference.includes(filters.reference)) &&
-        (filters.buyOrRent === 'all' || property.buyOrRent === filters.buyOrRent) &&
-        (filters.propertyType === 'all' || property.propertyType === filters.propertyType) &&
-        (filters.neighborhood === 'all' || property.neighborhood === filters.neighborhood)
-      );
-    });
-
-    setFilteredProperties(filteredProperties);
+    router.push(`/search?buyOrRent=${ filters.buyOrRent }&type=${ filters.type }&location=${ filters.location }`)
+    // const filteredProperties = properties.filter((property) => {
+    //   return (
+    //     (filters.reference === '' || property.reference.includes(filters.reference)) &&
+    //     (filters.buyOrRent === 'all' || property.buyOrRent === filters.buyOrRent) &&
+    //     (filters.type === 'all' || property.type === filters.type) &&
+    //     (filters.neighborhood === 'all' || property.neighborhood === filters.neighborhood)
+    //   );
+    // });
   };
 
   return (
@@ -66,14 +65,14 @@ const PropertySearch = ({ properties }) => {
             <div className="mb-4">
               <label className="block text-gray-200 font-semibold mb-2">Type:</label>
               <select
-                name="propertyType"
-                value={filters.propertyType}
+                name="type"
+                value={filters.type}
                 onChange={handleFilterChange}
                 className="w-full px-4 py-2 border border-gray-700 text-slate-700 rounded-lg focus:outline-none focus:border-blue-500"
               >
                 <option value="all">Tous</option>
-                <option value="apartment">Apartement</option>
-                <option value="office_apartment">Appartement burreau</option>
+                <option value="apartement">Apartement</option>
+                <option value="office_apartment">Studio</option>
                 <option value="furnished_apartment">Appartement complèt</option>
                 {/* Add more property types */}
               </select>
@@ -81,15 +80,14 @@ const PropertySearch = ({ properties }) => {
             <div className="mb-4">
               <label className="block text-gray-200 font-semibold mb-2">Zone:</label>
               <select
-                name="neighborhood"
-                value={filters.neighborhood}
+                name="location"
+                value={filters.location}
                 onChange={handleFilterChange}
                 className="w-full px-4 py-2 border border-gray-700 text-slate-700 rounded-lg focus:outline-none focus:border-blue-500"
               >
                 <option value="all">All</option>
-                <option value="Agdal">Agdal</option>
-                <option value="neighborhood2">Zone 1</option>
-                <option value="neighborhood3">Zone 2</option>
+                <option value="roches-noires">Roche Noire</option>
+                <option value="mers-sulten">Mers Sulten</option>
                 {/* Add more neighborhoods */}
               </select>
             </div>
@@ -104,16 +102,7 @@ const PropertySearch = ({ properties }) => {
           </div>
         </div>
       </section>
-      {/* SEARCH RESULTS */}
-      <div className="container mx-auto py-8 ">
-        <h3 className="text-2xl font-semibold mb-4 text-center">Search Results</h3>
-        {/* Render your property listings here */}
-        {filteredProperties.length > 0 ? (
-          <Properties properties={filteredProperties} />) : (
-          // Render a message when there are no search results
-          <p className="text-center">No matching properties found.</p>
-        )}
-      </div>
+
     </>
   );
 };

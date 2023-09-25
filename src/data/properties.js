@@ -17,12 +17,12 @@ const properties = [
     ],
     reference: 'REF123',
     buyOrRent: 'buy',
-    propertyType: 'apartment',
-    neighborhood: 'neighborhood1',
+    type: 'apartement',
+    location: 'roches-noires',
   },
   {
     id: 2,
-    title: 'Modern Downtown Apartment',
+    title: 'Modern Downtown apartement',
     price: '800,000',
     location: 'New York, NY',
     bedrooms: 2,
@@ -31,8 +31,8 @@ const properties = [
     images: ['https://images.pexels.com/photos/3288104/pexels-photo-3288104.png?auto=compress&cs=tinysrgb&w=400'],
     reference: 'REF456',
     buyOrRent: 'rental',
-    propertyType: 'office_apartment',
-    neighborhood: 'neighborhood2',
+    type: 'studio',
+    location: 'mers-sulten',
   },
   {
     id: 3,
@@ -45,8 +45,8 @@ const properties = [
     images: ['https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg?auto=compress&cs=tinysrgb&w=400'],
     reference: 'REF789',
     buyOrRent: 'buy',
-    propertyType: 'furnished_apartment',
-    neighborhood: 'neighborhood3',
+    type: 'apartement',
+    location: 'mers-sulten',
   },
   // Add more properties with the same structure
 ];
