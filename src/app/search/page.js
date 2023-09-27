@@ -2,7 +2,7 @@ import Properties from '@/components/Properties'
 
 const SearchPage = async ({ searchParams }) => {
   const { buyOrRent, type, location } = searchParams
-  const res = await fetch(`http://localhost:3000/api/properties?buyOrRent=${ buyOrRent }&type=${ type }&location=${ location }`)
+  const res = await fetch(`https://alpha-estate.vercel.app/api/properties?buyOrRent=${ buyOrRent }&type=${ type }&location=${ location }`)
   const properties = await res.json()
   return (
 
