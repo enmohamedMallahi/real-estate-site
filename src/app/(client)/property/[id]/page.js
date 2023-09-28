@@ -1,17 +1,16 @@
 // pages/property/[id].js
 import ImageSlider from "@/components/ImageSlider";
+import { getSingleProperty } from "@/lib/properties";
 
 
-export const fetchCache = 'force-no-store'
 export const revalidate = 0 // seconds
-export const dynamic = 'force-dynamic'
 
 const PropertyDetailPage = async ({ params }) => {
   let property = {};
+
   try {
-    const res = await fetch('https://alpha-estate.vercel.app/api/properties/' + params.id)
-    property = await res.json()
-    // console.log(property)
+    property = await getSingleProperty(params.id)
+    console.log(property)
   } catch (err) {
     console.error(err);
   }
@@ -29,7 +28,7 @@ const PropertyDetailPage = async ({ params }) => {
               </div>
             ))}
           </div> */}
-          <ImageSlider images={property?.images} />
+          <ImageSlider images={property?.imageUrls} />
 
           {/* Property Info */}
           <div className="">
@@ -46,17 +45,18 @@ const PropertyDetailPage = async ({ params }) => {
             {/* Description */}
             <div className="mb-4">
               <div className="mb-3 text-lg font-semibold text-gray-800">Description</div>
-              <p className="text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, veniam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, aliquid.</p>
+              <p className="text-gray-500">{property?.description}</p>
             </div>
 
             {/* More Property Info */}
             <div className="mb-4">
               <div className="mb-2 text-lg font-semibold text-gray-800">Property Details</div>
               <ul className="text-gray-500">
-                <li>Location: {property?.location}</li>
-                <li>Bedrooms: {property?.bedrooms}</li>
-                <li>Bathrooms: {property?.bathrooms}</li>
-                <li>Area: {property?.area}</li>
+                <li>Type: {property?.type}</li>
+                <li>Région: {property?.location}</li>
+                <li>Chambres: {property?.rooms}</li>
+                <li>Salles de bain: {property?.bathrooms}</li>
+                <li>Surface: {property?.surface}</li>
               </ul>
             </div>
 
@@ -68,8 +68,8 @@ const PropertyDetailPage = async ({ params }) => {
               Contactez-nous
             </a>
           </div>
-        </div>
-      </div>
+        </div >
+      </div >
     </div>
   );
 };

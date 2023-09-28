@@ -1,17 +1,31 @@
 import Link from 'next/link'
 
 const Footer = () => {
+  const links = [
+    {
+      name: 'A propos',
+      url: '/p/about'
+    },
+    {
+      name: 'Contact',
+      url: '/p/contact'
+    },
+    {
+      name: 'Politique de service',
+      url: '/p/politics'
+    }
+  ]
+
   return (
 
     <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
       <div className="flex flex-col items-center border-t pt-6">
 
         <nav className="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
-          <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">About</a>
-          <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Investor Relations</a>
-          <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Jobs</a>
-          <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Press</a>
-          <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Blog</a>
+          {links.map(link => (
+            <Link href={link.url} className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">{link.name}</Link>
+          ))}
+
         </nav>
 
 
@@ -44,7 +58,7 @@ const Footer = () => {
 
       </div>
 
-      <div className="py-8 text-center text-sm text-gray-400">© 2021 - Present Alpha Estate. All rights reserved.</div>
+      <div className="py-8 text-center text-sm text-gray-400">© 2021 - TrouverMonBien. All rights reserved.</div>
     </footer>
 
   )

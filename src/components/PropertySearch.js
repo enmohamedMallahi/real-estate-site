@@ -71,9 +71,9 @@ const PropertySearch = () => {
                 className="w-full px-4 py-2 border border-gray-700 text-slate-700 rounded-lg focus:outline-none focus:border-blue-500"
               >
                 <option value="all">Tous</option>
-                <option value="apartement">Apartement</option>
-                <option value="office_apartment">Studio</option>
-                <option value="furnished_apartment">Appartement complèt</option>
+                <option value="appartement">Appartement</option>
+                <option value="studio">Studio</option>
+                <option value="villa">Villa</option>
                 {/* Add more property types */}
               </select>
             </div>
@@ -86,8 +86,8 @@ const PropertySearch = () => {
                 className="w-full px-4 py-2 border border-gray-700 text-slate-700 rounded-lg focus:outline-none focus:border-blue-500"
               >
                 <option value="all">All</option>
-                <option value="roches-noires">Roche Noire</option>
-                <option value="mers-sulten">Mers Sulten</option>
+                <option value="Roches Noires">Roche Noire</option>
+                <option value="Mers Sultan">Mers Sulten</option>
                 {/* Add more neighborhoods */}
               </select>
             </div>
