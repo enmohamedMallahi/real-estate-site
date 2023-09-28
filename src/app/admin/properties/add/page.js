@@ -18,6 +18,7 @@ const NewProperties = () => {
     buyOrRent: 'buy ',
     images: [], // Store an array of image files
   });
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -27,6 +28,7 @@ const NewProperties = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true)
 
     try {
       const imageUrls = [];
@@ -73,6 +75,7 @@ const NewProperties = () => {
 
       // Handle success or redirect to a success page
       alert('Property added successfully!');
+      setIsLoading(false)
     } catch (error) {
       console.error('Error adding property:', error);
     }
@@ -97,7 +100,7 @@ const NewProperties = () => {
               name="title"
               value={formData.title}
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             />
           </div>
 
@@ -109,7 +112,7 @@ const NewProperties = () => {
               name="price"
               value={formData.price}
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             />
           </div>
 
@@ -121,7 +124,7 @@ const NewProperties = () => {
               name="surface"
               value={formData.surface}
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             />
           </div>
 
@@ -134,7 +137,7 @@ const NewProperties = () => {
               type="number"
               value={formData.rooms}
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             />
           </div>
 
@@ -147,7 +150,7 @@ const NewProperties = () => {
               type="number"
               value={formData.bathrooms}
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             />
           </div>
 
@@ -159,7 +162,7 @@ const NewProperties = () => {
               name="description"
               value={formData.description}
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             />
           </div>
 
@@ -172,7 +175,7 @@ const NewProperties = () => {
               name="location"
               value={formData.location}
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             >
               <option value="Roches Noires">Roches Noires</option>
               <option value="Mers Sultan">Mers Sultan</option>
@@ -188,7 +191,7 @@ const NewProperties = () => {
               name="type"
               value={formData.type}
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             >
               <option value="appartement">Appartement</option>
               <option value="studio">Studio</option>
@@ -204,7 +207,7 @@ const NewProperties = () => {
               name="type"
               value={formData.buyOrRent}
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             >
               <option value="buy">Acheter</option>
               <option value="rental">Louer</option>
@@ -220,12 +223,26 @@ const NewProperties = () => {
               name="images"
               multiple // Allow multiple file selection
               onChange={handleChange}
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             />
           </div>
 
           <div className="flex items-center justify-between sm:col-span-2">
-            <button type="submit" className="inline-block rounded-md bg-green-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">Send</button>
+            {/* {isLoading ? (<button type="button" class="bg-green-500 ..." disabled>
+              <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24" >
+
+                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#1fb141"><path d="M21.5,21.5v129h64.5v-32.25v-64.5v-32.25zM86,53.75c0,17.7805 14.4695,32.25 32.25,32.25c17.7805,0 32.25,-14.4695 32.25,-32.25c0,-17.7805 -14.4695,-32.25 -32.25,-32.25c-17.7805,0 -32.25,14.4695 -32.25,32.25zM118.25,86c-17.7805,0 -32.25,14.4695 -32.25,32.25c0,17.7805 14.4695,32.25 32.25,32.25c17.7805,0 32.25,-14.4695 32.25,-32.25c0,-17.7805 -14.4695,-32.25 -32.25,-32.25z"></path></g></g>
+
+              </svg>
+              Processing...
+            </button>) : (<button type="submit" className="inline-block rounded-md bg-green-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-green-300 transition duration-100 hover:bg-green-600 focus-visible:ring active:bg-green-700 md:text-base">
+              Ajouter
+            </button>)
+            } */}
+
+            <button type="submit" className="inline-block rounded-md bg-green-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-green-300 transition duration-100 hover:bg-green-600 focus-visible:ring active:bg-green-700 md:text-base">
+              {isLoading ? 'Loading...' : 'Ajouter'}
+            </button>
 
             <span className="text-sm text-gray-500">*Obligatoire</span>
           </div>

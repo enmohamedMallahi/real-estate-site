@@ -6,7 +6,7 @@ import PropertySearch from '@/components/PropertySearch'
 import { getAllProperties } from '@/lib/properties'
 
 // export const fetchCache = 'force-no-store'
-// export const revalidate = 0 // seconds
+export const revalidate = 60 // seconds
 // export const dynamic = 'force-dynamic'
 
 export default async function Home() {
