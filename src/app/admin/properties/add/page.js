@@ -14,7 +14,7 @@ const NewProperties = () => {
     rooms: '',
     bathrooms: '',
     description: '',
-    location: 'Roches Noires',
+    location: 'Aïn Chock',
     type: 'appartement',
     buyOrRent: 'buy ',
     images: [], // Store an array of image files

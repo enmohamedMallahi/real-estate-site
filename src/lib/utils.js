@@ -10,9 +10,9 @@ export const locations = [
 ]
 
 export const propertyTypes = [
-  'Appartement',
-  'Bureau',
-  'Magasin',
-  'Studio',
-  'Terrain'
+  'appartement',
+  'bureau',
+  'magasin',
+  'studio',
+  'terrain'
 ]
