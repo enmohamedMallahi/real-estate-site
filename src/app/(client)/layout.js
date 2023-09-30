@@ -5,8 +5,8 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Real Estate Site',
-  description: 'Created by Mohamed Mallahi',
+  title: 'TrouverMonBien',
+  description: 'À la recherche de la maison de vos rêves ou d\'un investissement immobilier lucratif? Vous êtes au bon endroit.TrouverMonBien vous connecte aux meilleures opportunités immobilières en un seul endroit pratique.',
 }
 
 export default function RootLayout({ children }) {

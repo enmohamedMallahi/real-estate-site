@@ -5,6 +5,14 @@ import { getSingleProperty } from "@/lib/properties";
 
 export const revalidate = 0 // seconds
 
+export const generateMetadata = async ({ params }) => {
+  const property = await getSingleProperty(params.id)
+  return {
+    title: property.title,
+    description: property.description
+  }
+}
+
 const PropertyDetailPage = async ({ params }) => {
   let property = {};
 
