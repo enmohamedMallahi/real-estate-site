@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '@/lib/firebase';
 import { addProperty } from '@/lib/properties';
+import { locations, propertyTypes } from '@/lib/utils';
 
 
 const NewProperties = () => {
@@ -177,9 +178,8 @@ const NewProperties = () => {
               onChange={handleChange}
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             >
-              <option value="Roches Noires">Roches Noires</option>
-              <option value="Mers Sultan">Mers Sultan</option>
-              <option value="Ain Sbaa">Ain Sbaa</option>
+              <option value='all'>Tous</option>
+              {locations.map(location => <option key={location} value={location}>{location}</option>)}
             </select>
           </div>
 
@@ -194,8 +194,7 @@ const NewProperties = () => {
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-green-300 transition duration-100 focus:ring"
             >
               <option value="appartement">Appartement</option>
-              <option value="studio">Studio</option>
-              <option value="villa">Villa</option>
+              {propertyTypes.map(type => <option key={type} value={type}>{type}</option>)}
             </select>
           </div>
 

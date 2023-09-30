@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'
+import { locations, propertyTypes } from '@/lib/utils';
 
 
 const PropertySearch = () => {
@@ -71,9 +72,7 @@ const PropertySearch = () => {
                 className="w-full px-4 py-2 border border-gray-700 text-slate-700 rounded-lg focus:outline-none focus:border-blue-500"
               >
                 <option value="all">Tous</option>
-                <option value="appartement">Appartement</option>
-                <option value="studio">Studio</option>
-                <option value="villa">Villa</option>
+                {propertyTypes.map(type => <option key={type} value={type}>{type}</option>)}
                 {/* Add more property types */}
               </select>
             </div>
@@ -86,9 +85,7 @@ const PropertySearch = () => {
                 className="w-full px-4 py-2 border border-gray-700 text-slate-700 rounded-lg focus:outline-none focus:border-blue-500"
               >
                 <option value="all">All</option>
-                <option value="Roches Noires">Roche Noire</option>
-                <option value="Mers Sultan">Mers Sulten</option>
-                {/* Add more neighborhoods */}
+                {locations.map(location => <option key={location} value={location}>{location}</option>)}
               </select>
             </div>
             <div className="col-span-2 md:col-span-4">
