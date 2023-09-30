@@ -4,7 +4,7 @@ const Footer = () => {
   const links = [
     {
       name: 'A propos',
-      url: '/p/about'
+      url: '/p/apropos'
     },
     {
       name: 'Contact',
@@ -12,7 +12,7 @@ const Footer = () => {
     },
     {
       name: 'Politique de service',
-      url: '/p/politics'
+      url: '/p/politique'
     }
   ]
 

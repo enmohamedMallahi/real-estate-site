@@ -15,11 +15,10 @@ const CTA = () => {
           Louer, acheter ou vendre
         </h2>
         <p className="mb-4 text-sm md:text-base max-w-lg mx-auto">
-          Vous cherchez à louer ou à acheter une nouvelle propriété ou à vendre
-          une existante? L'agence Immo Monte-Carlo fournit une solution facile!
+          Commencez dès maintenant votre recherche sur TrouverMonBien et découvrez les possibilités infinies qui s'offrent à vous sur le marché de l'immobilier. Trouvez votre bien dès aujourd'hui !
         </p>
         <div className="grid place-content-center">
-          <Link className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 md:px-8 rounded-md transition duration-300" href={`/`}>
+          <Link className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 md:px-8 rounded-md transition duration-300" href={`/p/about`}>
 
             Voir les détails
 

@@ -16,7 +16,7 @@ const NewProperties = () => {
     description: '',
     location: 'Aïn Chock',
     type: 'appartement',
-    buyOrRent: 'buy ',
+    buyOrRent: 'buy',
     images: [], // Store an array of image files
   });
   const [isLoading, setIsLoading] = useState(false)

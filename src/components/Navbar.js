@@ -9,8 +9,8 @@ import {
 import Link from 'next/link'
 
 const pages = [
-  { name: 'Features', href: '/features' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'A propos', href: '/p/apropos' },
+  { name: 'Contact', href: '/p/contact' },
 ]
 
 function classNames(...classes) {
@@ -26,8 +26,7 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <>
-              <span className="sr-only">Immobilier</span>
-              <img className="h-10 w-auto" src="http://www.immomonte-carlo.com/wp-content/uploads/2019/01/IMMO-MONTE-CARLO-Copie.png" alt="" />
+              <span className="font-bold text-lg">TrouverMonBien</span>
             </>
           </Link>
         </div>
@@ -59,12 +58,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <>
-                <span className="sr-only">Immobiler</span>
-                <img
+                <span className="font-bold text-lg">TrouverMonBien</span>
+                {/* <img
                   className="h-10 w-auto"
                   src="http://www.immomonte-carlo.com/wp-content/uploads/2019/01/IMMO-MONTE-CARLO-Copie.png"
                   alt=""
-                />
+                /> */}
               </>
             </Link>
             <button
