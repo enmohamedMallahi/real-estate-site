@@ -15,10 +15,10 @@ const CTA = () => {
           Louer, acheter ou vendre
         </h2>
         <p className="mb-4 text-sm md:text-base max-w-lg mx-auto">
-          Commencez dès maintenant votre recherche sur TrouverMonBien et découvrez les possibilités infinies qui s'offrent à vous sur le marché de l'immobilier. Trouvez votre bien dès aujourd'hui !
+          Commencez dès maintenant votre recherche sur Trouver Mon Bien et découvrez les possibilités infinies qui s'offrent à vous sur le marché de l'immobilier. Trouvez votre bien dès aujourd'hui !
         </p>
         <div className="grid place-content-center">
-          <Link className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 md:px-8 rounded-md transition duration-300" href={`/p/about`}>
+          <Link className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 md:px-8 rounded-md transition duration-300" href={`/p/apropos`}>
 
             Voir les détails
 

@@ -25,9 +25,9 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <>
-              <span className="font-bold text-lg">TrouverMonBien</span>
-            </>
+
+            <span className="font-bold text-lg">Trouver Mon Bien</span>
+
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -44,9 +44,9 @@ export default function Navbar() {
 
           {
             pages.map(page => (
-              <Link key={page.name} href={page.href} className="text-sm font-semibold leading-6 text-gray-900">
+              <a key={page.name} href={'https://trouvermonbien.com' + page.href} className="text-sm font-semibold leading-6 text-gray-900">
                 {page.name}
-              </Link>
+              </a>
             ))
           }
         </Popover.Group>
@@ -58,7 +58,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <>
-                <span className="font-bold text-lg">TrouverMonBien</span>
+                <span className="font-bold text-lg">Trouver Mon Bien</span>
                 {/* <img
                   className="h-10 w-auto"
                   src="http://www.immomonte-carlo.com/wp-content/uploads/2019/01/IMMO-MONTE-CARLO-Copie.png"
@@ -81,13 +81,13 @@ export default function Navbar() {
 
 
                 {pages.map(page => (
-                  <Link
+                  <a
                     key={page.name}
-                    href={page.href}
+                    href={'https://trouvermonbien.com' + page.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     {page.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
 

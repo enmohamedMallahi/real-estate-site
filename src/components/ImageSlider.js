@@ -65,7 +65,7 @@ export default function ImageSlider({ images }) {
 
       <div ref={thumbnailRef} className="keen-slider mt-2 thumbnail">
         {images.map((image, index) =>
-        (<img key={index} className="h-20 w-auto keen-slider__slide" src={image} alt="" />
+        (<img key={index} className="h-20 w-auto keen-slider__slide object-cover" src={image} alt="" />
         ))}
       </div>
     </div>

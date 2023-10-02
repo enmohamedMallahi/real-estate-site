@@ -5,8 +5,8 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'TrouverMonBien',
-  description: 'À la recherche de la maison de vos rêves ou d\'un investissement immobilier lucratif? Vous êtes au bon endroit.TrouverMonBien vous connecte aux meilleures opportunités immobilières en un seul endroit pratique.',
+  title: 'Trouver Mon Bien',
+  description: 'À la recherche de la maison de vos rêves ou d\'un investissement immobilier lucratif? Vous êtes au bon endroit.Trouver Mon Bien vous connecte aux meilleures opportunités immobilières en un seul endroit pratique.',
   keywords: 'studio, appartement, immobilier, appartement a louer, maison a vendre, vente immobilière, agence immobilière, appartement a vendre, avito immobilier, avito appartement, maison a vendre, agent immobilier, villa a vendre'
 }
 

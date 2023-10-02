@@ -18,7 +18,7 @@ const AdminPage = () => {
   return (
     <div className="flex h-screen items-center justify-center">
       <div className=" max-w-screen-2xl px-4 md:px-8 bg-white py-6 sm:py-8 lg:py-12">
-        <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl">TrouverMonBien</h2>
+        <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl">Trouver Mon Bien</h2>
 
 
         <form onSubmit={loginHandler} className="mx-auto max-w-lg rounded-lg border">

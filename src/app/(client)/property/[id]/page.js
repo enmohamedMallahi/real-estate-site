@@ -1,6 +1,7 @@
 // pages/property/[id].js
 import ImageSlider from "@/components/ImageSlider";
 import { getSingleProperty } from "@/lib/properties";
+import { getSiteSettings } from "@/lib/settings";
 
 
 export const revalidate = 0 // seconds
@@ -15,9 +16,11 @@ export const generateMetadata = async ({ params }) => {
 
 const PropertyDetailPage = async ({ params }) => {
   let property = {};
+  let settings = {}
 
   try {
     property = await getSingleProperty(params.id)
+    settings = await getSiteSettings()
     console.log(property)
   } catch (err) {
     console.error(err);
@@ -68,10 +71,10 @@ const PropertyDetailPage = async ({ params }) => {
               </ul>
             </div>
 
-            {/*C CTA Button */}
+            {/*CTA Button */}
             <a
               className="w-full inline-block rounded-lg bg-green-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-green-300 transition duration-100 hover:bg-green-600 focus-visible:ring active:bg-green-700 md:text-base"
-              href="#"
+              href={`https://wa.me/${ settings.contactNumber }?text=Je suis intérrèsé par la proprièté de référence ${ property.id }`}
             >
               Contactez-nous
             </a>

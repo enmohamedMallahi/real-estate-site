@@ -4,22 +4,21 @@ import Link from 'next/link';
 
 function AboutPage() {
   return (
-    <div className="bg-gray-100 h-screen flex flex-col justify-center items-center">
-      <header className="text-4xl font-bold mb-4">Bienvenue sur TrouverMonBien</header>
-      <p className="text-lg text-gray-700 mb-8">
-        À la recherche de la maison de vos rêves ou d'un investissement immobilier lucratif ? Vous êtes au bon endroit.
-      </p>
-      <Link className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded" href="/">
+    <div className="px-4 md:px-8 py-8">
 
-        Commencer
-
-      </Link>
+      <section className="mb-4">
+        <h2 className="text-2xl font-bold mb-2">Qui sommes-nous ?</h2>
+        {/* Paragraphe "Qui sommes-nous ?" */}
+        <p className="text-gray-700">
+          TrouverMonBien est une équipe passionnée d'experts immobiliers dédiés à vous aider à trouver la propriété parfaite. Avec des années d'expérience, nous sommes votre partenaire de confiance pour toutes vos aspirations immobilières.
+        </p>
+      </section>
 
       {/* Section de mise en avant */}
-      <section className="mt-12 text-center">
-        <h2 className="text-2xl font-bold mb-4">Pourquoi Choisir TrouverMonBien ?</h2>
+      <section className="mb-4">
+        <h2 className="text-2xl font-bold mb-2">Pourquoi Choisir Trouver Mon Bien ?</h2>
         <p className="text-gray-700">
-          TrouverMonBien offre une expérience unique pour votre recherche immobilière, avec des avantages tels que :
+          Trouver Mon Bien offre une expérience unique pour votre recherche immobilière, avec des avantages tels que :
         </p>
         <ul className="list-disc list-inside text-left mt-4">
           <li>Une vaste sélection de biens immobiliers.</li>
@@ -32,8 +31,8 @@ function AboutPage() {
       </section>
 
       {/* Section de contact */}
-      <section className="mt-12 text-center">
-        <h2 className="text-2xl font-bold mb-4">Nous Contacter</h2>
+      <section className="mb-4 ">
+        <h2 className="text-2xl font-bold mb-2">Nous Contacter</h2>
         <p className="text-gray-700">
           Avez-vous des questions ou avez-vous besoin d'aide dans votre recherche immobilière ? N'hésitez pas à nous contacter !
         </p>

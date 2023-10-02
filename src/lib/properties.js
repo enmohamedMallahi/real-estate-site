@@ -1,5 +1,6 @@
 import { collection, getDocs, doc, getDoc, query, where, orderBy, limit, setDoc, deleteDoc, addDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
+import { generateUniquePropertyId } from './utils';
 
 // Function to get all properties
 export const getAllProperties = async () => {
@@ -60,11 +61,22 @@ export const editProperty = async (propertyId, updatedData) => {
   await setDoc(propertyDocRef, updatedData, { merge: true });
 };
 
-// Function to add a new property
+// Function to add a new property with a custom ID
 export const addProperty = async (propertyData) => {
-  const propertiesCollection = collection(db, 'properties');
-  await addDoc(propertiesCollection, propertyData);
+  try {
+    const uniqueId = await generateUniquePropertyId();
+    propertyData.id = uniqueId;
+
+    const propertiesCollection = collection(db, 'properties');
+    await addDoc(propertiesCollection, propertyData);
+    return true; // Indicate success
+  } catch (error) {
+    console.error('Error adding property:', error);
+    throw error;
+  }
 };
+
+
 
 // Function to delete a property
 export const deleteProperty = async (propertyId) => {

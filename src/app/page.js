@@ -24,9 +24,9 @@ export default async function Home() {
       <Navbar />
       <PropertySearch />
       <section className="px-4 py-8 md:px-8  ">
-        <h2 className="text-4xl text-center font-bold">Bienvenue sur TrouverMonBien</h2>
+        <h2 className="text-4xl text-center font-bold">Bienvenue sur Trouver Mon Bien</h2>
         <p className="text-2xl text-center mb-2">Votre portail ultime pour l'immobilier !</p>
-        <p className="text-center text-gray-500">À la recherche de la maison de vos rêves ou d'un investissement immobilier lucratif ? Vous êtes au bon endroit. TrouverMonBien vous connecte aux meilleures opportunités immobilières en un seul endroit pratique. Notre répertoire immobilier vous offre un accès facile aux biens immobiliers les plus recherchés dans votre région.</p>
+        <p className="text-center text-gray-500">À la recherche de l'appartement de vos rêves ou d'un investissement immobilier ? Vous êtes au bon endroit. <strong className="font-bold">Trouver Mon Bien</strong> vous connecte aux meilleures opportunités immobilières en un seul endroit professionel. Notre comptoire immobilier vous offre un accès facile aux biens immobiliers les plus recherchés.</p>
       </section>
       <Properties properties={properties} />
       <CTA />

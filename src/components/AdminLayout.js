@@ -7,7 +7,7 @@ import Link from 'next/link'
 const navigation = [
   { name: 'Propriètés', href: '/admin/properties', current: false },
   { name: 'Ajouter une proprièté', href: '/admin/properties/add', current: false },
-  { name: 'Reports', href: '/', current: false },
+  { name: 'Paramètres', href: '/admin/settings', current: false },
 ]
 
 function classNames(...classes) {
@@ -22,10 +22,10 @@ export default function AdminLayout({ children }) {
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 items-center justify-between">
+                <div className="flex  h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <span className="font-bold text-lg text-white">TrouverMonBien</span>
+                      <span className="font-bold text-lg text-white">Trouver Mon Bien</span>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
