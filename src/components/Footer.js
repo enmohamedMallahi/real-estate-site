@@ -58,7 +58,7 @@ const Footer = () => {
 
       </div>
 
-      <div className="py-8 text-center text-sm text-gray-400">© 2021 - Trouver Mon Bien. All rights reserved.</div>
+      <div className="py-8 text-center text-sm text-gray-400">© 2023 - Trouver Mon Bien. All rights reserved. Built by <a target='_blank' href="https://devstance.com">DevStance</a></div>
     </footer>
 
   )
