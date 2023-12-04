@@ -63,7 +63,7 @@ const NewProperties = () => {
         description: formData.description,
         location: formData.location,
         type: formData.type,
-        imageUrls: imageUrls,
+        images: imageUrls,
         buyOrRent: formData.buyOrRent,
       };
 
@@ -236,6 +236,18 @@ const NewProperties = () => {
           {imagePreviews.length > 0 && (
             <div className="grid grid-cols-3 gap-4">
               {imagePreviews.map((preview, index) => (
+                <img
+                  key={index}
+                  src={preview}
+                  alt={`Image ${ index + 1 }`}
+                  className="rounded-md max-h-32"
+                />
+              ))}
+            </div>
+          )}
+          {formData.images.length > 0 && (
+            <div className="grid grid-cols-3 gap-4">
+              {formData.images.map((preview, index) => (
                 <img
                   key={index}
                   src={preview}
