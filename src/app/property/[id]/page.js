@@ -1,27 +1,30 @@
-// pages/property/[id].js
 import ImageSlider from "@/components/ImageSlider";
-import { getSingleProperty } from "@/lib/properties";
-import { getSiteSettings } from "@/lib/settings";
-
 
 export const revalidate = 0 // seconds
 
 export const generateMetadata = async ({ params }) => {
-  const property = await getSingleProperty(params.id)
+
+  const propRes = await fetch(`https://admin.trouvermonbien.com/api/properties/${ params.id }`)
+  property = await propRes.json()
+
   return {
     title: property.title,
     description: property.description
   }
+
 }
 
 const PropertyDetailPage = async ({ params }) => {
   let property = {};
-  let settings = {}
+  let customization = {}
 
   try {
-    property = await getSingleProperty(params.id)
-    settings = await getSiteSettings()
-    console.log(property)
+    const propRes = await fetch(`https://admin.trouvermonbien.com/api/properties/${ params.id }`)
+    property = await propRes.json()
+
+    const customRes = await fetch(`https://admin.trouvermonbien.com/api/customization`)
+    customization = await customRes.json()
+    // console.log(property)
   } catch (err) {
     console.error(err);
   }

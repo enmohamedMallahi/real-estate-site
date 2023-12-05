@@ -3,16 +3,16 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Properties from '@/components/Properties'
 import PropertySearch from '@/components/PropertySearch'
-import { getAllProperties } from '@/lib/properties'
 
 // export const fetchCache = 'force-no-store'
 export const revalidate = 60 // seconds
 // export const dynamic = 'force-dynamic'
 
 export default async function Home() {
-  let properties;
+  let properties = [];
   try {
-    properties = await getAllProperties()
+    let res = await fetch('https://admin.trouvermonbien.com/api/properties')
+    properties = await res.json()
     console.log(properties);
 
   } catch (err) {

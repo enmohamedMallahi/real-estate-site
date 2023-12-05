@@ -1,11 +1,10 @@
 import Properties from '@/components/Properties'
-import { getPropertiesByFilter } from '@/lib/properties'
 
 const SearchPage = async ({ searchParams }) => {
   const { buyOrRent, type, location } = searchParams
-  // const res = await fetch(`https://alpha-estate.vercel.app/api/properties?buyOrRent=${ buyOrRent }&type=${ type }&location=${ location }`)
-  // const properties = await res.json()
-  const properties = await getPropertiesByFilter({ buyOrRent, location, type })
+  const res = await fetch(`https://admin.trouvermonbien.com/api/properties?buyOrRent=${ buyOrRent }&type=${ type }&location=${ location }`)
+  const properties = await res.json()
+  // const properties = await getPropertiesByFilter({ buyOrRent, location, type })
   return (
 
     <div className="container mx-auto py-8 ">
