@@ -11,7 +11,7 @@ export const revalidate = 60 // seconds
 export default async function Home() {
   let properties = [];
   try {
-    let res = await fetch('https://admin.trouvermonbien.com/api/properties')
+    let res = await fetch('https://admin.trouvermonbien.com/api/properties?type=all&buyOrRent=all&location=all')
     properties = await res.json()
     console.log(properties);
 

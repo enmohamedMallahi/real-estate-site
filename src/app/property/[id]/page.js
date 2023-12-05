@@ -77,7 +77,7 @@ const PropertyDetailPage = async ({ params }) => {
             {/*CTA Button */}
             <a
               className="w-full inline-block rounded-lg bg-green-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-green-300 transition duration-100 hover:bg-green-600 focus-visible:ring active:bg-green-700 md:text-base"
-              href={`https://wa.me/${ settings.contactNumber }?text=Je suis intérrèsé par la proprièté de référence ${ property.id }`}
+              href={`https://wa.me/${ customization?.contact?.number }?text=Je suis intérrèsé par la proprièté de référence ${ property.id }`}
             >
               Contactez-nous
             </a>
